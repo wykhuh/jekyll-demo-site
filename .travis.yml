@@ -1,0 +1,9 @@
+language: rub
+rvm:
+- 2.2
+install:
+- bundle install
+- gem install html-proofer
+script:
+- jekyll doctor && jekyll build --verbose
+- htmlproofer ./_site --allow-hash-href
